@@ -1,6 +1,13 @@
+Here, all the scripts used in manuscript "Evaluating Precipitation Forecasts from the TIGGE via Fuzzy Mathematics from the Perspective of Hydrological Research" are provided. The scripts are developed in MATLAB.
+
 1)TIGGEreader_Main.m: This script is mainly used to read the raw TIGGE data downloaded from the ECMWF, which are saved in .nc format and have been organized according to information such as release center and lead time. The output of this script is the precipitation forecast, which is saved as a 2D matrix (longitude x latitude) in .mat format
+
 2)GPMreader_Main.m: This script exhibits two main functions, including reading the downloaded raw GPM_IMERG data and resampling the downloaded data to match the TIGGE data. The input of this script is the downloaded IMERG data in .nc4 format and the outputs are the original and resampled IMERG data, which are saved as 2D matrices (longitude x latitude) in .mat format. The reason for resampling the IMERG data is that the latitude and longitude of the grid center differ from those of the TIGGE dataset.
+
 3)DailyMembershipFunctionCalculation_Main.m: In this script, we calculate the characteristic functions of the three traditional rates and the membership functions of the three fuzzy rates grid by grid on the basis of the daily precipitation forecast and remote sensing precipitation data previously read from the TIGGE and IMERG datasets.
+
 4)StatisticForThreeRates_Main.m: In this script, the three fuzzy rates and the three traditional rates are calculated on the basis of the results from DailyMembershipFunctionCalculation_Main.m.
+
 5)ResampleGPM.m: This function is used to resample the GPM_IMERG data. The method of resampling is to use the average of all the grid points involved.
+
 6)FuzzyHitRateEvaluation.m: This function is the core function in this paper and aims to calculate the characteristic functions for the three traditional rates and the membership functions. There are three input variables of this function, namely, PF, PO and as, of which PF denotes the precipitation forecast, PO denotes the precipitation observation, and as denotes the threshold for fuzzy hits.
