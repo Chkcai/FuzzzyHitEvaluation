@@ -1,4 +1,4 @@
-function [CLsetRes,FsetRes]=FuzzyHitRateEvaluationV3(PO,PF,as) 
+function [CLsetRes,FsetRes]=FuzzyHitRateEvaluation(PO,PF,as) 
 %% Input
 % PO: observed precipitation
 % PF: forecasted precipitation 
